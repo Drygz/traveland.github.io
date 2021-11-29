@@ -1,0 +1,26 @@
+.header
+    display: flex
+    justify-content: space-between
+    align-items: center
+    padding: 30px
+    color: $header-color
+    li
+        display: inline
+        list-style: none
+        padding: 15px
+@media (max-width: 992px)
+    .header
+        li
+            padding: 5px
+
+@media (max-width: 768px)
+    .header
+        flex-direction: column
+
+@media (max-width: 576px)
+    .header
+        li
+            padding: 0
+            padding-right: 5px
+@media (max-width: 360px)
+    .header

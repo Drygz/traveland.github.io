@@ -1,0 +1,64 @@
+// USER VARIABLES SECTION
+$font-gela: 'Gelasio', sans-serif // User Font Family
+$font-roboto: 'Roboto', sans-serif
+$main-color: #000000
+$header-color: #FFFFFF
+$gray-color: #A79997
+$accent: #FF715B
+$border-color: #F5EBE9
+
+$xxl: 1320px
+$xl: 1140px
+$lg: 960px
+$md: 720px
+$sm: 540px
+
+@import "reset"
+
+// FONTS LOAD SECTION
+@mixin font($fname, $fstyle, $fweight, $furl)
+	@font-face
+		font-family: $fname
+		font-style: $fstyle
+		font-weight: $fweight
+		src: url($furl) format('ttf')
+
+@include font('Gelasio', normal, 500, '../fonts/Gelasio-Medium.ttf')
+@include font('Gelasio', italic, 500, '../fonts/Gelasio-Italic.ttf')
+@include font('Gelasio', normal, 700, '../fonts/Gelasio-Bold.ttf')
+@include font('Gelasio', italic, 700, '../fonts/Gelasio-BoldItalic.ttf')
+
+
+@include font('Roboto', normal, 400, '../fonts/Roboto-Regular.ttf')
+@include font('Roboto', italic, 400, '../fonts/Roboto-Italic.ttf')
+@include font('Roboto', normal, 700, '../fonts/Roboto-Bold.ttf')
+@include font('Roboto', italic, 700, '../fonts/Roboto-BoldItalic.ttf')
+
+// GENERAL DOCUMENT STYLES
+// .wrapper 
+// 	max-width: 1200px
+// 	margin: 0 auto
+
+body
+	font-family: 'Gelasio'
+	color: $main-color
+
+.wrapper
+    max-width: $xxl
+    margin: 0 auto
+
+@media (max-width: 1400px)
+    .wrapper
+        max-width: $xl
+@media (max-width: 1200px)
+    .wrapper
+        max-width: $lg
+@media (max-width: 992px)
+    .wrapper
+        max-width: $md
+@media (max-width: 768px)
+    .wrapper
+        max-width: $sm
+@media (max-width: 576px)
+    .wrapper
+        max-width: 100%

@@ -1,0 +1,100 @@
+.SP
+    width: 100%;
+    display: flex
+    flex-direction: column
+    align-items: center
+    padding-top: 50px
+    &-title
+        $font-gela: 'Gelasio'
+        font-size: 30px
+    &-description
+        $font-roboto: 'Roboto'
+        padding: 30px 0px
+.banner
+    position: relative
+    &__slider
+        position: relative
+        overflow: hidden
+        &-img
+            img
+                width: 100%
+                height: 740px
+                object-fit: cover
+                display: none
+            &.active
+                display: block
+        &-text
+            font-size: 3em
+            font-weight: 700
+            position: absolute
+            bottom: 50%
+            left: 10%
+    &__pagination
+        position: absolute
+        width: 28%
+        color: $accent
+        display: flex
+        justify-content: space-between
+        align-items: center
+        bottom: -50px
+        &-arrows
+            i
+                padding: 10px
+                border: 2px solid #F5EBE9
+                margin-right: 10px
+                cursor: pointer
+                &:hover
+                    background-color: $accent
+                    color: white
+        &-line
+            width: 150px
+            height: 2px
+            background-color: #F5EBE9
+        &-number
+            font-size: 30px
+
+
+@media (max-width: 1200px)
+    .banner__pagination-line
+        width: 100px
+    .banner__slider-img
+        img
+            height: 640px
+
+
+@media (max-width: 992px)
+    .banner__pagination
+        justify-content: start
+        &-line
+            display: none
+    .banner__slider-img
+        img
+            height: 540px
+
+@media (max-width: 768px)
+    .banner__slider-text
+        font-size: 2em
+    .banner__slider-img
+        img
+            height: 400px
+    .banner__pagination
+        bottom: 0
+        i
+            margin-right: 0
+            background-color: $accent
+            color: white
+
+@media (max-width: 576px)
+    .banner__pagination
+        position: absolute
+        bottom: 20%
+        left: 5%
+        font-size: 12px
+        &-number
+            font-size: 20px
+        i
+            padding: 5px
+            color: white
+            background-color: $accent
+    .banner__slider-text
+        font-size: 24px
