@@ -1,0 +1,180 @@
+.footer
+    display: flex
+    padding-top: 30px
+    padding-bottom: 30px
+    background-color: #2694990A;
+
+    &__info
+        font-family: 
+        font-weight: bold
+        width: 30%
+        span
+            padding-left: 10px
+        i
+            font-size: 20px
+            padding-right: 5px
+            transform: translate(-1px,3px) 
+        &-logo
+            padding: 10px
+        &-desc
+            padding: 10px
+        &-email
+            padding: 10px
+        &-site
+            padding: 10px
+        &-pic
+            padding: 10px
+    &__links
+        font-weight: bold
+        display: flex
+        flex-direction: column
+        align-items: center
+        width: 25%
+        font-family: 
+        span
+            color: #000
+            font-size: 20px
+            font-weight: 800
+        ul
+            padding-left: 15px
+        li
+            padding-top: 10px
+            list-style: none
+            a
+                text-decoration: none
+    &__support
+        font-weight: bold
+        display: flex
+        flex-direction: column
+        align-items: center
+        width: 25%
+        font-family: 
+        span
+            color: #000
+            font-size: 20px
+            font-weight: 800
+            transform: translate(-30px,0)
+        ul
+            padding-left: 15px
+        li
+            padding-top: 10px
+            list-style: none
+            a
+                text-decoration: none
+    &__news
+        display: flex
+        flex-direction: column
+        width: 20%
+        font-size: 20px
+        font-weight: bold
+        align-items: center
+        font-family: 
+        span
+            color: #000
+            font-size: 20px
+            font-weight: 800
+        input
+            width: 230px
+            height: 40px
+            margin: 15px 0
+            background-color: #F8F8F8
+            border: 1px solid #F5EBE9
+.copyRight
+    padding: 15px 0
+    text-align: center
+    border-top: 1px solid
+@media screen and (max-width: 992px)
+    .footer
+        &__info
+            font-size: 12px
+            span
+                padding-left: 0
+            i
+                font-size: 15px
+            &-logo
+                padding: 10px
+            &-desc
+                padding: 10px
+            &-tell
+                padding: 10px
+            &-email
+                padding: 10px
+            &-site
+                padding: 10px
+        &__links
+            font-size: 12px
+            ul
+                padding-left: 10px
+            li
+                padding-top: 10px
+        &__support
+            font-size: 12px
+            span
+                transform: translate(-15px,0)
+            ul
+                padding-left: 10px
+            li
+                padding-top: 10px
+        &__news
+            font-size: 12px
+            span
+                font-size: 20px
+            input
+                width: 150px
+                height: 30px
+                margin: 15px 0
+                background-color: #F8F8F8
+                border: 1px solid #F5EBE9
+            &-btn
+                height: 40px
+
+@media (max-width: 768px)
+    .footer
+        justify-content: space-between
+        padding: 5px
+        &__news
+            display: none
+    .copyRight
+        font-size: 14px
+
+@media (max-width: 576px)
+    .footer
+        &__info
+            font-size: 10px
+            display: flex
+            flex-direction: column
+            justify-content: space-evenly
+            i
+                font-size: 15px
+            &-logo
+                padding: 0
+            &-desc
+                padding: 0
+            &-tell
+                padding: 0
+            &-email
+                padding: 0
+            &-site
+                padding: 0
+        &__links
+            font-size: 10px
+            span
+                font-size: 14px
+            ul
+                padding-left: 0
+            li
+                padding-top: 5px
+                &::before
+                    display: none
+        &__support
+            font-size: 10px
+            span
+                font-size: 14px
+            ul
+                padding-left: 0
+            li
+                padding-top: 5px
+                &::before
+                    display: none
+    .copyRight
+        font-size: 12px
