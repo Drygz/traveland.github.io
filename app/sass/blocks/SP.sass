@@ -60,6 +60,12 @@
         justify-content: start
         &-line
             display: none
+    .SP
+        padding: 5px
+        &-title
+            width: 50%
+        &-description
+            width: 50%
     .banner__slider-img
         img
             height: 400px
@@ -72,7 +78,6 @@
         bottom: 0
         i
             margin-right: 0
-            background-color: $accent
             color: white
 
 @media (max-width: 576px)
@@ -80,15 +85,8 @@
         img
             height: 300px
     .banner__pagination
-        position: absolute
-        bottom: 20%
-        left: 5%
-        font-size: 12px
+
         &-number
-            font-size: 20px
-        i
-            padding: 5px
-            color: white
-            background-color: $accent
+            display: none 
     .banner__slider-text
         font-size: 24px
