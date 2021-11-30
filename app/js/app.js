@@ -4,23 +4,86 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
-let offset = 0;
-const sliderLine = document.querySelector('.slider-line');
+	// слайдер
 
-document.querySelector('.slider-next').addEventListener('click', function(){
-    offset = offset + 256;
-    if (offset > 768) {
-        offset = 0;
+	const images = [...document.querySelectorAll('.banner__slider-img')]
+	const left = document.querySelector('#left');
+	const right = document.querySelector('#right');
+	const number = document.querySelector('.banner__pagination-number');
+
+	let el = 0;
+	function firstRender(params) {
+		images.forEach((el, i) => {
+			if (i === 0) {
+				el.classList.add('active')
+			}
+		})
+		number.textContent = el + 1
+	}
+	firstRender();
+
+	function changeSlide() {
+		
+		images.forEach((el) => {
+			el.classList.remove('active')
+		})
+		images[el].classList.add('active')
+		number.textContent = el + 1
+	}
+
+	left.addEventListener('click', (event) => {
+		if (!event.isTrusted) return; //for webpack
+		console.log('left', el);
+		if (el === 0) {
+			el = images.length - 1
+		} else {
+			el = el - 1
+		}
+		changeSlide()
+	})
+
+	right.addEventListener('click', (event) => {
+		if (!event.isTrusted) return; //for webpack
+		console.log('right', el);
+		if (el === images.length - 1) el = 0
+		else el = el + 1
+		changeSlide()
+	})
+    // модалка
+	// const btnalert = document.querySelector('.banner__slider-btn');
+	// console.log('btnalert', btnalert);
+
+	// btnalert.onclick = function() {
+	// 	if (!event.isTrusted) return;
+	// 	alert('hello');
+	//   };
+
+	//   tab
+
+	const content = [...document.querySelectorAll('.tabcontent')]; //контент
+	const tabItems = [...document.querySelectorAll('.tabheader__item')]; // навигация табов
+  	const navigation = document.querySelector('.tabheader__items');
+
+  	function toogleTab(index) {
+    content.forEach((tab) => {
+      tab.classList.add('hide')
+      tab.classList.remove('show')
+    }) //скрываем все элементы
+    content[index].classList.remove('hide') //убираем класс каторый скрывает блок у элемента под номером index
+    content[index].classList.add('show')
+
+    tabItems.forEach((item) => {
+      item.classList.remove('tabheader__item_active')
+    })
+
+    tabItems[index].classList.add('tabheader__item_active')
+  	}
+  	toogleTab(0)
+
+  	navigation.addEventListener('click', (e) => {
+    const target = e.target;
+    if (target.classList.contains('tabheader__item')) {
+      toogleTab(Number(e.target.dataset.index))
     }
-    sliderLine.style.left = -offset + 'px';
-});
-
-document.querySelector('.slider-prev').addEventListener('click', function () {
-    offset = offset - 256;
-    if (offset < 0) {
-        offset = 768;
-    }
-    sliderLine.style.left = -offset + 'px';
-});
-
+  })
 })
