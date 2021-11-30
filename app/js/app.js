@@ -49,14 +49,6 @@ document.addEventListener('DOMContentLoaded', () => {
 		else el = el + 1
 		changeSlide()
 	})
-    // модалка
-	// const btnalert = document.querySelector('.banner__slider-btn');
-	// console.log('btnalert', btnalert);
-
-	// btnalert.onclick = function() {
-	// 	if (!event.isTrusted) return;
-	// 	alert('hello');
-	//   };
 
 	//   tab
 
